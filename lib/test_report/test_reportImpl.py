@@ -46,13 +46,13 @@ class test_report:
         # ctx is the context object
         # return variables are: returnVal
         #BEGIN run_test_report
-        report_params = {'message': '',
+        report_params = {'message': 'this is a report message',
                          'workspace_name': params.get('workspace_name'),
                          # 'objects_created': objects_created,
                          # 'file_links': output_files,
                          # 'html_links': output_html_files,
-                         'direct_html_link_index': 0,
-                         'html_window_height': 333,
+                         # 'direct_html_link_index': 0,
+                         # 'html_window_height': 333,
                          'report_object_name': 'kb_test_report_' + str(uuid.uuid4())}
 
         kbase_report_client = KBaseReport(os.environ['SDK_CALLBACK_URL'])
