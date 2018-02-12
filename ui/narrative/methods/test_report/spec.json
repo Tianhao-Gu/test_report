@@ -1,0 +1,73 @@
+{
+    "ver": "0.0.1",
+    "authors": [
+        "tgu2"
+    ],
+    "contact": "",
+    "categories": ["active"],
+    "widgets": {
+        "input": null,
+        "output": null
+    },
+    "parameters": [ 
+        {
+            "id": "parameter_1",
+            "optional": true,
+            "advanced": false,
+            "allow_multiple": false,
+            "default_values": [ "" ],
+            "field_type": "text",
+            "text_options": {
+                "valid_ws_types": [ ]
+            }
+        }
+    ],
+    "behavior": {
+        "service-mapping": {
+            "url": "",
+            "name": "test_report",
+            "method": "run_test_report",
+            "input_mapping": [
+                {
+                    "narrative_system_variable": "workspace",
+                    "target_property" : "workspace_name"
+                },
+                {
+                    "input_parameter": "parameter_1",
+                    "target_property" : "parameter_1"
+                }
+            ],
+            "output_mapping": [
+                {
+                    "service_method_output_path": [0],
+                    "target_property": "output"
+                },
+                {
+                    "input_parameter": "parameter_1",
+                    "target_property": "input"
+                },
+                {
+                    "narrative_system_variable": "workspace",
+                    "target_property": "workspaceName"
+                },
+                {
+                  "service_method_output_path": [0,"report_name"],
+                  "target_property": "report_name"
+                },
+                {
+                  "service_method_output_path": [0,"report_ref"],
+                  "target_property": "report_ref"
+                },
+                {
+                  "constant_value": "16",
+                  "target_property": "report_window_line_height"
+                },
+                {
+                  "narrative_system_variable": "workspace",
+                  "target_property": "wsName"
+                }
+            ]
+        }
+    },
+    "job_id_output_field": "docker"
+}
